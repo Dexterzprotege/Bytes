@@ -66,4 +66,3 @@ class Solution: #(96ms-43.15% Time) and (14.7MB-5.28% Space)
                 partitionX += 1
                 partitionY -= 1
         return -1
-
