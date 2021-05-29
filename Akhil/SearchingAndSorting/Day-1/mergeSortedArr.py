@@ -10,6 +10,7 @@ def placeelement(arr,num,idx,maxlen):
         maxlen-=1
     arr[idx] = num
 
+# Time complexity is O(M*N) space complexity is O(1)
 def approach1(nums1,m,nums2,n):
     if m == 0 and n!=0:
         nums1 = nums2.copy()
@@ -19,13 +20,13 @@ def approach1(nums1,m,nums2,n):
         placeelement(nums1,num,getIdx,m-1)
         m+=1
     
-    
+# time complexity is O(N+NlogN) space complexity is O(N) -> used internally when using sorting   
 def approach2(nums1,m,nums2,n):
     for i in range(m,m+n):
         nums1[i] = nums2[i-m]
     nums1.sort()
 
-
+# time complexity is O(M+N) space complexity is O(N)
 def approach3(nums1,m,nums2,n):
         arr=[0]*(m+n)
         k = 0
@@ -47,6 +48,7 @@ def approach3(nums1,m,nums2,n):
         print(arr)
             
 
+# time complexity is O(M+N) space complexity is O(1)
 def approach4(nums1,m,nums2,n):
     while m > 0 and n > 0:
         if nums1[m-1] >= nums2[n-1]:
@@ -59,9 +61,13 @@ def approach4(nums1,m,nums2,n):
         nums1[:n] = nums2[:n]
     
 def mergesortedArr(nums1,m,nums2,n):
+    # brute force fails on edge cases
     approach1(nums1,m,nums2,n)
+    # A better brute force approach
     approach2(nums1,m,nums2,n)
+    # optimized at computing 
     approach3(nums1,m,nums2,n)
+    # optimized at computing and space
     approach4(nums1,m,nums2,n)
 
 

@@ -1,3 +1,5 @@
+#   optimal approach time complexity is O(NlogN+logN)
+#   space complexity is O(N) -> used internally when sorting
 def hIndex(citations) -> int:
     citations.sort()
     n = len(citations)
