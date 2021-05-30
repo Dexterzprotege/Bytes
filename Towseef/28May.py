@@ -36,6 +36,15 @@ class Solution:
                 return float("{:.4f}".format((resarr[mid-1]+resarr[mid])/2))
             else:
                 return float("{:.4f}".format(resarr[mid]))
+#2 https://leetcode.com/problems/h-index/
+class Solution:
+    def hIndex(self, citations: List[int]) -> int:
+        citations.sort()
+        i = 0
+        while i < len(citations) and citations[len(citations)-i-1] > i:
+            i += 1
+        return i
+        
                 
             
         
