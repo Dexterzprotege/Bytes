@@ -12,5 +12,19 @@ class Solution:
             else:
                 res.append(intervals[i])
         return res
-      
+ #https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array
+#O(n) solution
+class Solution:
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        start = -1
+        end = -1
+        for i in range(len(nums)):
+            if nums[i] == target:
+                start = i
+                break
+        for i in range(len(nums)):
+            if nums[len(nums)-i-1] == target:
+                end = len(nums)-i-1
+                break
+        return [start, end]
  
